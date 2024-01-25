@@ -1,0 +1,16 @@
+@import "../../styles/variable.scss";
+@import "../../styles/custom.scss";
+
+.navbar-brand {
+    color: $primaryColor; // Use the primaryColor variable for the logo text color
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-brand:hover {
+    background-color: lightgray;
+    color: $primaryColor;
+}

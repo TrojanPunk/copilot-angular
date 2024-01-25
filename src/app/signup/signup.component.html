@@ -1,0 +1,81 @@
+<form [formGroup]="signupForm" class="container d-flex justify-content-center flex-column" (submit)="postProperty()">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <button [routerLink]="'/'" class="btn btn-primary primary-bg-color border-0 mr-2 primary-bg-color">Sign In</button>
+                 <div class="partition"></div>
+                <button [routerLink]="'/signup'" class="btn btn-primary primary-bg-color border-0 ml-2 primary-bg-color">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="username">
+                    Username
+                </label>
+                <div class="input-group">
+                    <input type="text" class="form-control no-box-shadow" id="username" formControlName="username">
+                    <div class="input-group-append">
+                        <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                            <i class="bi bi-person-fill" style="border-left: none;"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="password">
+                    Password
+                </label>
+                <div class="input-group">
+                    <input type="password" class="form-control no-box-shadow" id="password" formControlName="password">
+                    <div class="input-group-append">
+                        <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                            <i class="bi bi-key-fill" style="border-left: none;"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="email">
+                    Email
+                </label>
+                <div class="input-group">
+                    <input type="email" class="form-control no-box-shadow" id="email" formControlName="email">
+                    <div class="input-group-append">
+                        <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                            <i class="bi bi-envelope-fill" style="border-left: none;"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="roles" id="buyer" value="buyer" formControlName="roles">
+                    <label class="form-check-label" for="buyer">Buyer</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="roles" id="seller" value="seller" formControlName="roles">
+                    <label class="form-check-label" for="seller">Seller</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <button class="btn text-light border-0 no-box-shadow w-100 bg-primary" [disabled]="!signupForm.valid" type="submit">Submit</button>
+        </div>
+    </div>
+</form>

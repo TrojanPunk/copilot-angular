@@ -1,0 +1,9 @@
+@import '../../shared/styles/custom.scss';
+@import '../../shared/styles/variable.scss';
+
+.no-box-shadow {
+    &:focus {
+        box-shadow: none;
+        border-color: $primaryColor;
+    }
+}

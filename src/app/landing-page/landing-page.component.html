@@ -1,0 +1,44 @@
+<div class="container d-flex justify-content-center flex-column">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <button [routerLink]="['/']" class="btn btn-primary primary-bg-color border-0 mr-2">Sign In</button>
+                <div class="partition"></div>
+                <button [routerLink]="['/signup']" class="btn btn-primary primary-bg-color border-0 ml-2">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-6">
+            <form [formGroup]="signinForm" (submit)="getSigninData()">
+                <div class="form-group">
+                    <label for="username">
+                        Username
+                    </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control no-box-shadow" id="username" formControlName="username">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                                <i class="bi bi-person-fill" style="border-left: none;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">
+                        Password
+                    </label>
+                    <div class="input-group">
+                        <input type="password" class="form-control no-box-shadow" id="password" formControlName="password">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                                <i class="bi bi-key-fill" style="border-left: none;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn primary-bg-color text-light border-0 no-box-shadow w-100">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
