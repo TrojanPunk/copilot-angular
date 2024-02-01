@@ -1,1 +1,40 @@
 @import '../../shared/styles/custom.scss';
+@import '../../shared/styles/variable.scss';
+
+.input-group label {
+    font-size: 12px;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-group input[type="text"] {
+    height: 55px;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: none;
+    padding-left: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filter-btn {
+    border-radius: 10px;
+}
+
+.input-group .input-group-text {
+    background-color: inherit;
+    border-left: none;
+}
+
+.input-group .input-group-text i {
+    border-left: none;
+}
+
+.form-control::placeholder {
+    font-size: 12px;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.category-filter:hover {
+    color: $primaryColor;
+}

@@ -1,0 +1,107 @@
+@import '../../shared/styles/custom.scss';
+@import '../../shared/styles/variable.scss';
+
+.headings {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.input-group-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group-image label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: dashed 2px $primaryColor;
+    border-radius: 10px;
+}
+
+.input-group-image label i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.input-group-image input[type="file"] {
+    display: none;
+}
+
+.input-group-image .btn {
+    border: dashed 2px $primaryColor;
+    background: rgba(228, 48, 63, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    color: $primaryColor;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-group input[type="text"] {
+    height: 60px;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: none;
+    padding-left: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-group .input-group-text {
+    background-color: inherit;
+    border-left: none;
+}
+
+.input-group .input-group-text i {
+    border-left: none;
+}
+
+.bi {
+    border-radius: 20px;
+}
+
+.carousel-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+
+.carousel-caption h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: white;
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+    color: white;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: white;
+    opacity: 0.5;
+}
+
+.carousel-item {
+    background: linear-gradient(to top, rgb(33, 33, 33, 1), transparent);
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+

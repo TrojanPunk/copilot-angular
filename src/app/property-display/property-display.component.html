@@ -1,7 +1,7 @@
 <!-- FILEPATH: /c:/Users/admin/Desktop/CapstoneCopilot/realestate-angular/src/app/property-display/property-display.component.html -->
 <!-- BEGIN: abpxx6d04wxr -->
 <!-- BEGIN: ed8c6549bwf9 -->
-<div class="d-flex flex-row align-items-center justify-content-start mb-2 g-40 property-display">
+<div class="d-flex flex-row align-items-center justify-content-start my-3 g-40 property-display">
     <div class="property-name-and-type d-flex align-items-center g-10">
         <h1 class="property-name mb-0" style="font-weight: 500">{{propertyData.propertyName}}</h1>
         <div class="badge-container">
@@ -36,20 +36,17 @@
         </div>
     </div>
 
-    <div> <!-- Added div for the code below -->
-        <!-- BEGIN: be15d9bcejpp -->
-        <!-- END: abpxx6d04wxr -->
+    <div>
     </div>
 </div>
 
-<h2 class="property-category mb-0" style="font-weight: 500">This is a {{propertyData.category}} in {{propertyData.location.city}}, {{propertyData.location.state}}</h2>
+<h2 class="property-category mt-4 mb-2" style="font-weight: 500">This is a {{propertyData.category}} in {{propertyData.location.city}}, {{propertyData.location.state}}</h2>
 <div class="price-area-container d-flex align-items-center g-10">
-    <p class="price-text mb-0" style="font-size: 20px; color: var(--primary-color)">{{propertyData.price | currency:'INR'}}</p>
+    <p class="price-text mb-0 primary-color" style="font-size: 24px; font-weight: 600">{{propertyData.price | currency:'INR'}}</p>
     <span class="misc-price">exclusive of all taxes</span>
     <div class="crop-icon">
-        <i class="bi bi-crop"></i>
+        <i class="bi bi-crop primary-color"></i>
     </div>
-    <p class="area-text mb-0 text-secondary" style="font-size: 20px; color: var(--primary-color)">{{propertyData.area}}</p>
+    <p class="area-text mb-0 primary-color" style="font-size: 24px; font-weight: 600">{{propertyData.area}}</p><span class="misc-price text-secondary">sq. ft.</span>
     <span class="misc-area"></span>
 </div>
-<!-- END: abpxx6d04wxr -->

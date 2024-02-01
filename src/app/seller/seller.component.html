@@ -1,1 +1,231 @@
-<p>seller works!</p>
+<div id="carouselExampleDark" class="carousel carousel-dark slide mb-5 mx-auto mt-3" style="width: 60%; height: 50%;">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-47418176/original/9a8fa887-8954-4e0e-9c20-3e7c8dd66754.jpeg?im_w=1200" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Beautiful Home</h5>
+                <p>Spacious and modern property with stunning views.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1041703012892813453/original/0e509a81-d245-4d9c-8637-c67df6937b50.jpeg?im_w=1200" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Cozy Apartment</h5>
+                <p>Charming apartment in a vibrant neighborhood.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://a0.muscache.com/im/pictures/bd21c4fe-0630-4363-8dcf-c720f51919d5.jpg?im_w=1200" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Spacious Villa</h5>
+                <p>Luxurious villa with a private pool and garden.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<form [formGroup]="addPropertyForm" (submit)="postPropertyData()">
+
+    <h2 class="headings mb-0">Property Details</h2>
+    <hr class="mt-2">
+
+    <div class="input-group">
+        <input type="text" class="form-control no-box-shadow" id="propertyName" formControlName="propertyName"
+            placeholder="Property Name">
+        <div class="input-group-append">
+            <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                <i class="bi bi-house-fill" style="border-left: none; border-radius: 10px;"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category" (selectionChange)="disableInputs($event)"
+                    placeholder="Select Category">
+                    <mat-option value="residential">Residential</mat-option>
+                    <mat-option value="rentals">Rentals</mat-option>
+                    <mat-option value="commercial">Commercial</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="price" formControlName="price"
+                    placeholder="Price">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-currency-rupee" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="area" formControlName="area"
+                    placeholder="Area">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-crop" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="headings mb-0">Features</h2>
+    <hr class="mt-2">
+
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="rooms" formControlName="bhk"
+                    placeholder="Rooms">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-door-open" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="baths" formControlName="baths"
+                    placeholder="Baths">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-bathtub" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="parking" formControlName="parking"
+                    placeholder="Parking">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-parking" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="headings mb-0">Location</h2>
+    <hr class="mt-2">
+
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="city" formControlName="city"
+                    placeholder="City">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-building" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="state" formControlName="state"
+                    placeholder="State">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-compass" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="pincode" formControlName="pincode"
+                    placeholder="Pincode">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-pin-angle" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-group mb-5">
+        <input type="text" class="form-control no-box-shadow" id="address" formControlName="address"
+            placeholder="Address">
+        <div class="input-group-append">
+            <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                <i class="bi bi-geo-alt" style="border-left: none; border-radius: 10px;"></i>
+            </span>
+        </div>
+    </div>
+
+    <h2 class="headings mb-0">Seller Details</h2>
+    <hr class="mt-2">
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control no-box-shadow" id="fullName" formControlName="sellerName"
+            placeholder="Full Name">
+        <div class="input-group-append">
+            <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                <i class="bi bi-person" style="border-left: none; border-radius: 10px;"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-6">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="mobileNumber" formControlName="sellerMobile"
+                    placeholder="Mobile Number">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-phone-vibrate" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="input-group">
+                <input type="text" class="form-control no-box-shadow" id="email" formControlName="sellerEmail"
+                    placeholder="Email">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-envelope" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-group-image mb-3">
+        <input type="file" class="form-control-file" id="imageUpload" multiple>
+        <label for="imageUpload" class="btn primary-bg-color no-box-shadow">
+            <i class="bi bi-upload" style="font-size: 1.5rem; border-radius: 10px;"></i>
+        </label>
+    </div>
+
+    <button type="submit" class="btn primary-bg-color text-light border-0 no-box-shadow mb-4 w-100">Submit</button>
+</form>

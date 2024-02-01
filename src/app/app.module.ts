@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from 'src/shared/material.module';
 import { CardComponent } from '../shared/components/card/card.component';
 import { PropertyDisplayComponent } from './property-display/property-display.component';
+import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PropertyDisplayComponent } from './property-display/property-display.co
     BuyerComponent,
     SellerComponent,
     CardComponent,
-    PropertyDisplayComponent
+    PropertyDisplayComponent,
+    FilterDialogComponent
   ],
   imports: [
     BrowserModule,

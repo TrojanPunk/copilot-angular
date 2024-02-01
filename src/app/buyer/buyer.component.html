@@ -2,24 +2,24 @@
     <div class="container">
         <!-- Category Filters -->
         <div class="d-flex flex-row justify-content-between">
-            <div class="d-flex flex-row">
-                <button class="nav-link btn btn-link" style="border: none; background-color: transparent;">
+            <div class="d-flex flex-row g-40">
+                <button class="category-filter nav-link btn btn-link" style="border: none; background-color: transparent;" (click)="filterProperties('residential')">
+                    <i class="bi bi-house-door" style="font-size: 1.6rem;"></i>
+                    <span class="d-flex flex-column" style="font-size: 0.8rem;">
+                        Residential
+                    </span>
+                </button>
+                <button class="category-filter nav-link btn btn-link" style="border: none; background-color: transparent;" (click)="filterProperties('commercial')">
                     <button class="nav-link btn btn-link" style="border: none; background-color: transparent;">
-                        <i class="bi bi-building" style="font-size: 1.6rem; color: black;"></i>
-                        <span class="d-flex flex-column" style="font-size: 0.8rem; color: black;">
+                        <i class="bi bi-building" style="font-size: 1.6rem;"></i>
+                        <span class="d-flex flex-column" style="font-size: 0.8rem;">
                             Commercial
                         </span>
                     </button>
                 </button>
-                <button class="nav-link btn btn-link" style="border: none; background-color: transparent;">
-                    <i class="bi bi-house-door" style="font-size: 1.6rem; color: black;"></i>
-                    <span class="d-flex flex-column" style="font-size: 0.8rem; color: black;">
-                        Residential
-                    </span>
-                </button>
-                <button class="nav-link btn btn-link" style="border: none; background-color: transparent;">
-                    <i class="bi bi-building" style="font-size: 1.6rem; color: black;"></i>
-                    <span class="d-flex flex-column" style="font-size: 0.8rem; color: black;">
+                <button class="category-filter nav-link btn btn-link" style="border: none; background-color: transparent;" (click)="filterProperties('rentals')">
+                    <i class="bi bi-house" style="font-size: 1.6rem;"></i>
+                    <span class="d-flex flex-column" style="font-size: 0.8rem;">
                         Rentals
                     </span>
                 </button>
@@ -27,34 +27,37 @@
         </div>
 
         <!-- Dropdown for Cities -->
-        <div class="d-flex flex-row justify-content-between">
+        <form [formGroup]="citySelect" class="d-flex flex-row justify-content-between">
             <mat-form-field>
                 <mat-label>Select City</mat-label>
-                <mat-select>
-                    <mat-option value="city1">City 1</mat-option>
-                    <mat-option value="city2">City 2</mat-option>
-                    <mat-option value="city3">City 3</mat-option>
+                <mat-select formControlName="searchPropertyByCity" (selectionChange)="cityFilter($event)">
+                    <mat-option *ngFor="let city of cities" [value]="city.city">{{city.city}}</mat-option>
                 </mat-select>
             </mat-form-field>
-        </div>
+        </form>
         
         <!-- Filter Button and Search Input -->
-        <div class="d-flex flex-row align-items-center justify-content-between">
-            <button class="btn btn-light border rounded-pill">
+        <div class="d-flex flex-row align-items-center justify-content-between g-20">
+            <button class="filter-btn btn btn-light border d-flex g-10 py-3" (click)="openDialog()">
                 <i class="bi bi-sliders"></i>
-                Filters
+                <span class="filter">Filters</span>
             </button>
-            <input type="text" class="form-control" formControlName="searchField">
-            <span class="input-group-text">
-                <i class="bi bi-search"></i>
-            </span>
+            <form class="input-group" [formGroup]="searchField">
+                <input type="text" class="form-control no-box-shadow ps-4" formControlName="searching"
+                    placeholder="Search Property">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="background-color: inherit; border-left: none;">
+                        <i class="bi bi-search pe-2" style="border-left: none; border-radius: 10px;"></i>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
 
 <ng-container>
     <div class="cards d-flex flex-column g-20">
-        <app-card *ngFor="let property of propertyData; index as i"
+        <app-card *ngFor="let property of filteredProperties; index as i"
                 [id]="property.id"
                 [images]="property.images"
                   [propertyName]="property.propertyName"

@@ -4,6 +4,80 @@
 .no-box-shadow {
     &:focus {
         box-shadow: none;
-        border-color: $primaryColor;
+        border-color: lightgray;
     }
+}
+
+label {
+    font-size: 12px;
+    color: rgb(20, 20, 20);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    height: 55px;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: none;
+    padding-left: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+.filter-btn {
+    border-radius: 10px;
+}
+
+.input-group .input-group-text {
+    background-color: inherit;
+    border-left: none;
+}
+
+.input-group .input-group-text i {
+    border-left: none;
+}
+
+.form-control::placeholder {
+    font-size: 12px;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.category-filter:hover {
+    color: $primaryColor;
+}
+
+.signin-btn {
+    font-weight: 500;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #e43054, #d70565);
+    transition: all 1s ease-in-out;
+}
+
+.signin-btn:hover {
+    background: linear-gradient(to left, #e43054, #d70565);
+}
+
+.sign {
+    color: $primaryColor;
+    background: transparent;
+    font-size: 14px;
+}
+
+.sign:hover,
+.sign:focus,
+.sign:active   {
+    background: $primaryColor;
+    color: white;
+}
+
+.landing-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    color: rgb(20, 20, 20);
 }

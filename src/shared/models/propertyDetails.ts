@@ -9,6 +9,8 @@ export interface IPropertyDetails {
     seller: ISeller;
     location: ILocation;
     category: string;
+    maxPrice: number;
+    minPrice: number;
 }
 
 export interface IFeatures {
