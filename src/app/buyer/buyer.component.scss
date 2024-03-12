@@ -38,3 +38,18 @@
 .category-filter:hover {
     color: $primaryColor;
 }
+
+.spin-wheel {
+    height: 40px;
+    width: 40px;
+    animation: rotating 3s linear infinite;
+}
+
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}

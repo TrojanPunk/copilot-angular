@@ -5,6 +5,7 @@ import { PropertyService } from 'src/shared/services/property.service';
 import { FilterDialogComponent } from '../filter-dialog/filter-dialog.component';
 import { ICityData } from 'src/shared/models/cityData';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { FeelingLuckyDialogComponent } from '../feeling-lucky-dialog/feeling-lucky-dialog.component';
 
 @Component({
   selector: 'app-buyer',
@@ -128,6 +129,15 @@ export class BuyerComponent implements OnInit {
     this.filteredProperties = this.propertyData.filter((property: IPropertyDetails) => {
       const startsWithSearch = property.propertyName.toLowerCase().startsWith(search);
       return startsWithSearch;
+    });
+  }
+
+  openWheelDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(FeelingLuckyDialogComponent, {
+      width: '800px',
+      height: '75%',
+      enterAnimationDuration,
+      exitAnimationDuration,
     });
   }
 }

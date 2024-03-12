@@ -16,6 +16,7 @@ import { SharedModule } from 'src/shared/material.module';
 import { CardComponent } from '../shared/components/card/card.component';
 import { PropertyDisplayComponent } from './property-display/property-display.component';
 import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
+import { FeelingLuckyDialogComponent } from './feeling-lucky-dialog/feeling-lucky-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
     SellerComponent,
     CardComponent,
     PropertyDisplayComponent,
-    FilterDialogComponent
+    FilterDialogComponent,
+    FeelingLuckyDialogComponent
   ],
   imports: [
     BrowserModule,
